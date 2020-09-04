@@ -1,22 +1,12 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { ActionsTypes } from './redux/actions';
-import { SearchAppBar } from './components/NavbarComponent';
+import React from "react";
+import { ListPost } from "./components/ListPost/ListPostComponent";
+import { CommentsContainer } from "./components/CommentsContainer/CommentsContainerComponent";
 
 export default function App() {
-  const dispatch = useDispatch();
   return (
-    <div className='App'>
-      <SearchAppBar />
-      <div style={{ marginTop: 20 }}>
-        <button
-          onClick={() =>
-            dispatch({ type: ActionsTypes.FETCH_POSTS_LIST_REQUEST })
-          }
-        >
-          Dispatch Button
-        </button>
-      </div>
-    </div>
+    <>
+      <ListPost />
+      <CommentsContainer />
+    </>
   );
 }
